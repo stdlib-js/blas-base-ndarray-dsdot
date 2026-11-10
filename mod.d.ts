@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,16 +16,27 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { float32ndarray } from '@stdlib/types/ndarray';
 
 /**
-* BLAS level 1 routine to compute the dot product of two one-dimensional single-precision floating-point ndarrays with double-precision accumulation.
+* Computes the dot product of two one-dimensional single-precision floating-point ndarrays with double-precision accumulation.
 *
-* @module @stdlib/blas-base-ndarray-dsdot
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   first one-dimensional input ndarray.
+*     -   second one-dimensional input ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns dot product
 *
 * @example
 * var Float32Vector = require( '@stdlib/ndarray-vector-float32' );
-* var dsdot = require( '@stdlib/blas-base-ndarray-dsdot' );
 *
 * var x = new Float32Vector( [ 4.0, 2.0, -3.0, 5.0, -1.0 ] );
 * var y = new Float32Vector( [ 2.0, 6.0, -1.0, -4.0, 8.0 ] );
@@ -33,12 +44,9 @@
 * var z = dsdot( [ x, y ] );
 * // returns -5.0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dsdot( arrays: [ float32ndarray, float32ndarray ] ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dsdot;
